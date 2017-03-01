@@ -1,0 +1,25 @@
+body {
+	/*background: #ffffff url("background.jpg") top right/100% no-repeat fixed;*/
+    background-image: url("./../images/background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.content {
+	margin-left: 1em;
+	padding: 1em;
+	background-color: rgba(20, 20, 20, 0.2);
+	width: 60%;
+}
+
+.panel {
+	font-family: 'Sansita', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: small-caps;
+	background-color: rgba(250, 250, 250, 0.4);
+	width: 50%;
+    height: 10%;
+	margin: 2em;
+}

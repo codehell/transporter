@@ -1,0 +1,57 @@
+{
+  "properties": {
+    "name": "Wukong",
+    "coordinates": [0, 0, 0]
+  },
+
+  "places": {
+
+    "port": {
+      "name": "Port",
+      "coordinates": [25, 200],
+      "description": [
+        "Un lugar lleno de gente que viene y va a toda prisa, mientras las naves que despegan y aterrizan son tan numerosas que apenas dejan ver el cielo"
+      ],
+      "shipyards": {
+        "name": "Astillero",
+        "description": [
+          "El astillero de vera es uno de los más antiguos y transitados de la galaxia, aquí se reunen los mas afamados y respetados comerciantes que pudieras esperar"
+        ],
+        "people": {
+          "Cansty": {
+            "description": [
+              "Cansty es el comercial del astillero, es un picto del planeta Picture, y aunque lleva casi toda la vida viviendo en wukong, nunca dejará de tener ese caracter autoritario caracteristico de su raza"
+            ],
+            "presentation": "Buenos días humano ¿Que te trae por aquí?",
+            "unknown": "No se de que me hablas",
+            "comments": {
+              "vera": "Vera es mi hogar, solo dejaría esta ciudad con los pies por delante",
+              "wukong": "Nunca he abandonado este planeta desde que llegué y espero seguir así"
+            }
+          }
+        },
+        "actions": {
+          "to buy": [
+            "ships", "improvements", "weapons"
+          ],
+          "to sell": [
+            "ships", "improvements", "weapons"
+          ]
+        }
+      }
+    },
+
+    "vera": {
+      "name": "Vera",
+      "coordinates": [
+        0, 0
+      ],
+      "description": [
+        "Vera es una ciudad magnífica localizada en la costa del río Turo, uno de los más caudalosos y ricos de Wukong, su majestuosidad se abre paso entre las montañas de la luna de la cordillera veratica. ",
+        "En esta ciudad es donde vivía tu desconocido y adinerado tío Harto que es por lo que viniste la primera vez ya que te dejó una pequeña herencia con la que compraste una casa y permitio establecerte en este hermoso lugar. ",
+        "Con el resto pensabas adquirir una pequeña nave de transporte y abrir un modesto negocio que quien sabe donde te puede llevar. ",
+        "La aventura está servida."
+      ]
+    }
+  }
+}
