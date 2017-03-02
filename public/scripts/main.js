@@ -1,12 +1,17 @@
+var characterData; //Variable Global
+// Espera a cargar la pagina
 window.onload = function () {
-    //getData(20);
+    // Oculta el registro del personaje
     var inp = document.getElementById('username');
     inp.style.display = "none";
+    //Muestra el registro si no existen las cookies
     if (document.cookie.length == 0) {
         inp.style.display = "block";
     }
     else {
-        console.log(document.cookie);
+        // Inicializa los datos del personaje a traves del contenido de las cookies
+        // e inicia el juego a traves de getData
+        getData(parseInt(getIdFromCookies()));
     }
 };
 function createCharacter() {
@@ -15,14 +20,25 @@ function createCharacter() {
     register(name.value);
     //*********************************//
 }
-// Obtiene los datos del personaje.
+// Obtiene los datos del personaje de la BD.
 function getData(id) {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', './storyteller.php?id=' + id);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.onload = function () {
         if (xhr.status === 200) {
-            createCookiesObject(JSON.parse(xhr.responseText));
+            if (document.cookie.length == 0) {
+                createCookies(JSON.parse(xhr.responseText));
+            }
+            else {
+                characterData = JSON.parse(xhr.responseText);
+                if (validateCharacterData(characterData)) {
+                    initGame();
+                }
+                else {
+                    showWarning();
+                }
+            }
         }
     };
     xhr.send();
@@ -37,18 +53,35 @@ function register(name) {
         getData(parseInt(xhr.responseText));
     };
 }
-function createCookiesObject(data) {
-    // Guarda las cookies en un objeto
-    // Muestra los datos y llama a la funcion de inicio del juego
-    // aun sin implementar.
+// Crea las cookies obtiene los datos de la bd e inicia a traves de getData
+function createCookies(data) {
     var i = 0, aux;
-    var documentCookies;
     var date = new Date;
     date.setFullYear(2100);
     document.cookie = "id=" + data.id + "; expires=" + date + "; path=/";
     document.cookie = "name=" + data.name + "; expires=" + date + "; path=/";
-    document.cookie = "purse=" + data.purse + "; expires=" + date + "; path=/";
-    document.cookie = "location=" + data.location + "; expires=" + date + "; path=/";
+    if (validateCharacterData(data)) {
+        characterData = data;
+        getData(data.id);
+    }
+    else {
+        showWarning();
+    }
+}
+function initGame() {
+    console.log(characterData);
+}
+function validateCharacterData(data) {
+    return true;
+}
+function showWarning() {
+}
+//Obtiene el id del personaje desde las cookies
+function getIdFromCookies() {
+    var cookiesString = document.cookie;
+    var cookie = cookiesString.split(';');
+    var pos = cookie[0].indexOf('=');
+    return cookie[0].slice(pos + 1);
 }
 // Borra las cookies
 function deleteCookies() {
@@ -56,6 +89,4 @@ function deleteCookies() {
     date.setFullYear(2000);
     document.cookie = "id=; expires=" + date + "; path=/";
     document.cookie = "name=; expires=" + date + "; path=/";
-    document.cookie = "purse=; expires=" + date + "; path=/";
-    document.cookie = "location=; expires=" + date + "; path=/";
 }

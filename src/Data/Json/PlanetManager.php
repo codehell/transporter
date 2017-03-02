@@ -30,7 +30,6 @@ class PlanetManager
      */
     public function getAll(bool $array = false)
     {
-        // TODO: Cada linea de las descripciones o comentarios de los .json, será un parrafo.
         if($array)
             return json_decode($this->contents, true);
         return $this->contents;

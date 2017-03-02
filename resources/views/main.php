@@ -16,10 +16,6 @@
         </div>
         <div class="panel">
             <button onclick="deleteCookies()" type="button">Borrar Cookies</button>
-            <form action="register.php" method="post">
-                <input id="prueba" name="prueba" type="hidden" value="myPrueba">
-                <button type="submit">Enviar</button>
-            </form>
         </div>
 
     </div>

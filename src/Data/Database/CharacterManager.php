@@ -22,7 +22,7 @@ class CharacterManager
      * @param int $id
      * @return array
      */
-    public function getCharacter(int $id): string
+    public function getCharacterById(int $id): string
     {
         $sql = "select * from characters where id = ?";
         $sth = $this->pdo->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
@@ -31,8 +31,9 @@ class CharacterManager
         return json_encode(current($this->character));
     }
 
-    public function createCharacterProfile($name)
+    public function storeCharacter($name)
     {
+        //TODO: Crear un token unico para recuperar el personaje en el caso de borrado de las cookies
         $sql = "insert into characters(name, purse, location) values (?, ?, ?)";
         $result = $this->pdo->prepare($sql)->execute([$name, 0, '0,0,0,0,0']);
         return $this->pdo->lastInsertId();
