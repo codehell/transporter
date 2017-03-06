@@ -7,19 +7,22 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Transporter</title>
     <link rel="stylesheet" href="./styles/style.css">
+
 </head>
 <body>
     <div id="content" class="content">
-        <div id="username" class="panel">
+        <div id="register" class="panel">
+            <p>No se han encontrado los datos de tu personaje.</p>
+            <p>Introduce el nombre de un nuevo personaje o el token de identificación</p>
             <input id="input" type="text">
             <button onclick="createCharacter()" type="button">Envia</button>
         </div>
+        <div id="history" class="panel"></div>
         <div class="panel">
             <button onclick="deleteCookies()" type="button">Borrar Cookies</button>
         </div>
-
     </div>
 
-    <script src="./scripts/main.js"></script>
+    <script src="./scripts/trans.js"></script>
 </body>
 </html>

@@ -6,7 +6,7 @@
  * Time: 18:44
  */
 
-namespace Codehell\Transporter\Data\Database;
+namespace Codehell\Transporter\Data;
 
 use Codehell\Transporter\{
     ConfigManager
