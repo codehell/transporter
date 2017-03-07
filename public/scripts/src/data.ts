@@ -7,6 +7,7 @@ namespace Transporter {
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.onload = function () {
             if (xhr.status === 200) {
+                globalGameData = new Game(JSON.parse(xhr.responseText));
                 createCookies(JSON.parse(xhr.responseText));
             }
         };

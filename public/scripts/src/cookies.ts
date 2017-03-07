@@ -1,5 +1,4 @@
 namespace Transporter {
-
     // Crea las cookies inicializa los datos del juego y lo inicia.
     export function createCookies(data) {
         let i: number = 0, aux: string[];

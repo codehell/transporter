@@ -1,9 +1,10 @@
 namespace Transporter {
-    //Todo: Implementar initByToken.
 
+    export declare let globalGameData: GameData; /*************VARIABLE GLOBAL**********************/
+
+    //Todo: Implementar initByToken.
     // Espera a cargar la pagina
     window.onload = function () {
-
         // Oculta el registro del personaje
         let inp = document.getElementById('register');
         inp.style.display = "none";
@@ -33,15 +34,8 @@ namespace Transporter {
     }
 
     export function initGame(data) {
-
-        //ToDo: Implementar una clase GameData que permita añadir una region nueva y quizas una clase Region
-        // y dentro de la clase GameData un array de regiones, que pueda ir creciendo con cada peticion.
-        let gameData = <GameData>{'regions': []};
-        console.log(gameData);
-        gameData.character = data.character;
-        gameData.regions.push(data.region);
-
-        let loc = new Location(gameData);
+        let gameData = globalGameData;
+        let loc = new Location(globalGameData);
         const HISTORY_PANEL = document.getElementById('history');
         let iAmIn: Place;
         let locationElement = document.createElement('div');
