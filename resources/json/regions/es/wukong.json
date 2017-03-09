@@ -1,20 +1,23 @@
 {
   "properties": {
     "name": "Wukong",
-    "location": [0, 0]
+    "location": [0, 0],
+    "scope": 0
   },
   "bodies": [
     {
       "properties": {
         "name": "Hsuang",
         "location": [0, 0],
+        "scope": 0,
         "type": "planeta"
       },
       "places": [
         {
           "properties": {
             "name": "Puerto",
-            "location": [0, 10000],
+            "location": [100, 100],
+            "scope": 141,
             "description": [
               "Un lugar lleno de gente que viene y va a toda prisa, mientras las naves que despegan y aterrizan son tan numerosas que apenas dejan ver el cielo"
             ]
@@ -26,6 +29,7 @@
           "properties": {
             "name": "Astillero",
             "location": [0, 100],
+            "scope": 100,
             "description": [
               "El astillero de vera es uno de los más antiguos y transitados de la galaxia, aquí se reunen los mas afamados y respetados comerciantes que pudieras esperar"
             ]
@@ -59,6 +63,7 @@
           "properties": {
             "name": "Vera",
             "location": [0, 0],
+            "scope": 0,
             "description": [
               "Vera es una ciudad magnífica localizada en la costa del río Turo, uno de los más caudalosos y ricos del planeta Hsuang, su majestuosidad se abre paso entre las montañas de la luna de la cordillera veratica. ",
               "En esta ciudad es donde vivía tu desconocido y adinerado tío Harto que es por lo que viniste la primera vez ya que te dejó una pequeña herencia que te permitio comprar una casa y establecerte en este hermoso lugar. ",

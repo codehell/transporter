@@ -11,15 +11,15 @@
 </head>
 <body>
     <div id="content" class="content">
-        <div id="register" class="panel">
+        <div id="register" class="panel blur">
             <p>No se han encontrado los datos de tu personaje.</p>
             <p>Introduce el nombre de un nuevo personaje o el token de identificación</p>
             <input id="input" type="text">
-            <button onclick="createCharacter()" type="button">Envia</button>
+            <button id="create-character" type="button">Envia</button>
         </div>
-        <div id="history" class="panel"></div>
+        <div id="stage" class="panel"></div>
         <div class="panel">
-            <button onclick="deleteCookies()" type="button">Borrar Cookies</button>
+            <button id="delete-cookies" type="button">Borrar Cookies</button>
         </div>
     </div>
 

@@ -1,5 +1,5 @@
 namespace Transporter {
-    // Crea las cookies inicializa los datos del juego y lo inicia.
+    // Crea las cookies
     export function createCookies(data) {
         let i: number = 0, aux: string[];
         let date = new Date;
@@ -8,12 +8,6 @@ namespace Transporter {
         document.cookie = "id=" + data.character.id + "; expires=" + date + "; path=/";
         document.cookie = "name=" + data.character.name + "; expires=" + date + "; path=/";
         document.cookie = "token=" + data.character.token + "; expires=" + date + "; path=/";
-
-        if (validateGameData(data)) {
-            initGame(data);
-        } else {
-            //Todo: mostrar error de validacion
-        }
     }
 
     //Obtiene el id del personaje desde las cookies
@@ -25,7 +19,7 @@ namespace Transporter {
     }
 
     // Borra las cookies
-    function deleteCookies() {
+    export let deleteCookies = function () {
         let date: Date = new Date();
         date.setFullYear(2000);
         document.cookie = "id=; expires=" + date + "; path=/";

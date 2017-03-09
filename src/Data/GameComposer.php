@@ -18,12 +18,17 @@ class GameComposer
     public function __construct(int $id)
     {
         $characterManager = new CharacterManager();
+        $ships = new ShipManager($id);
+
         $characterManager->setCharacterById($id);
         $this->character = $characterManager->getCharacter(true);
+
         $region = new RegionManager($this->character['location']);
         $this->region = $region->getAll(true);
+
         $this->game['character'] = $this->character;
         $this->game['region'] = $this->region;
+        $this->game['ships'] = $ships->getShips();
     }
 
     public function getGame(): string

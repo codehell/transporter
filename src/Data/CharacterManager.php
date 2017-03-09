@@ -2,7 +2,7 @@
 namespace Codehell\Transporter\Data;
 
 use PDO;
-use Codehell\Transporter\Data\Character;
+
 
 class CharacterManager
 {
@@ -47,7 +47,7 @@ class CharacterManager
         // Create token.
         $token = base_convert(rand(1000000,9999999), 10, 32);
         $result = $this->pdo->prepare("insert into characters(name, purse, location, token) values (?, ?, ?, ?)");
-        $result->execute([$name, 0, '0,0,0,0,0,0', $token]);
+        $result->execute([$name, 1000, '0,0,0,0,0,0', $token]);
         $this->setCharacterByTokenAndName($token, $name);
     }
 

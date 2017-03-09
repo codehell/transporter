@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "name": "Cruko",
+    "capacity": 25,
+    "speed": 0.2,
+    "ambit": "body",
+    "scope": 100,
+    "attack": 25,
+    "defense": 10
+  }
+]

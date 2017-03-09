@@ -3,6 +3,9 @@ namespace Transporter {
     export interface GameData {
         character: CharacterData;
         regions: Region[];
+        ships: Ship[];
+        init();
+        setRegion(region: Region);
     }
 
     export interface CharacterData {
@@ -18,6 +21,7 @@ namespace Transporter {
         properties: {
             name: string;
             location: number[];
+            scope: number;
         };
     }
 
@@ -26,6 +30,7 @@ namespace Transporter {
             name: string;
             type: string;
             location: number[];
+            scope: number;
         };
         places: Place[];
     }
@@ -34,7 +39,33 @@ namespace Transporter {
         properties: {
             name: string;
             location: number[];
+            scope: number;
             description: string[];
         };
+        people: People[];
+    }
+
+    export interface People {
+        name: string;
+        description: string[];
+        presentation: string[];
+        comments: {reference: string; answer: string[]}[];
+    }
+
+    export interface Ship {
+        id: number;
+        name: string;
+        capacity: number;
+        speed: number;
+        ambit: ShipType;
+        scope: number;
+        attack: number;
+        defense: number;
+    }
+
+    enum ShipType {
+        local,
+        body,
+        region,
     }
 }
