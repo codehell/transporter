@@ -247,6 +247,7 @@ var Transporter;
             initGameAndCookies(post);
         }
         else {
+            // Todo: Mostrar errores de validación.
         }
     };
     // Obtiene los datos del juego por el nombre y el token, y lo inicia
@@ -261,6 +262,7 @@ var Transporter;
                 Transporter.globalGameData.init();
             }
             else {
+                //Todo: mostrar error de validacion
             }
         };
     }
